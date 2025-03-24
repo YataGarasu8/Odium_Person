@@ -169,7 +169,7 @@ MonoBehaviour:
   quantityText: {fileID: 6411778946400225853}
   index: 0
   equipped: 0
-  quantity: 0
+  quantity: 1
 --- !u!1 &5558109679728957819
 GameObject:
   m_ObjectHideFlags: 0

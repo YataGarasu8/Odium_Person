@@ -136,4 +136,8 @@ public class InventoryUI : MonoBehaviour
             UpdateUI();
         }
     }
+    public void ClickTrash()
+    {
+
+    }
 }

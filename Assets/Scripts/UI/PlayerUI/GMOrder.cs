@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class GMOrder : MonoBehaviour
 {
-    public ItemDate BatItem;
+    public ItemDate batItem;
+    public ItemDate portionItem;
 
     public void ClickGetBat()
     {
-        CharacterManager.Instance.Player.inventory.AddItem(BatItem);
+        CharacterManager.Instance.Player.inventory.AddItem(batItem);
+    }
+    public void ClickGetportion()
+    {
+        CharacterManager.Instance.Player.inventory.AddItem(portionItem);
     }
 }
