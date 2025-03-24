@@ -15,6 +15,6 @@ MonoBehaviour:
   characterSprite: {fileID: 4799564363562893812, guid: ef27243d2935b2f499228295a0742db3, type: 3}
   characterName: Yata
   characterLevel: 1
-  maxHp: 12241
-  maxAtk: 15012
-  maxDef: 9964
+  maxHp: 1224
+  maxAtk: 1501
+  maxDef: 996

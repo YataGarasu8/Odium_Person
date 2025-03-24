@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
-    public ItemSlot[] slots;
+    public List<ItemSlot> slots;
 
     public GameObject itemSlots;
     public GameObject inventoryWindow;
@@ -16,12 +16,11 @@ public class InventoryUI : MonoBehaviour
     private int selectItemIndex;
     public int maxSlotcount;
     public TextMeshProUGUI slotCountText;
+    public TextMeshProUGUI ItemNameText;
+    public TextMeshProUGUI ItemStatusText;
+    public TextMeshProUGUI ItemExplainText;
     public Transform Content;
 
-    private void Start()
-    {
-
-    }
     public bool IsOpen()
     {
         return inventoryWindow.activeInHierarchy;//창이 켜져있는지 여부
@@ -37,34 +36,55 @@ public class InventoryUI : MonoBehaviour
             inventoryWindow.SetActive(true);
         }
     }
+    public void UpdateUI()
+    {
+        for (int i = 0; i < slots.Count; i++)
+        {
+            if (slots[i].itemDate != null)
+            {
+                slots[i].Set();
+            }
+            else
+            {
+                slots[i].Clear();
+            }
+        }
+        slotCountText.text = $"{slots.Count}/{maxSlotcount}";
+    }
     public void AddItem(ItemDate date)//아이템 추가
     {
-        if(date.canStack)//중복이 가능한 아이템일 경우
+        if (date.canStack)//중복이 가능한 아이템일 경우
         {
             ItemSlot slot = GetStackItemSlot(date);//같은 종류의 아이템을 검색
 
-            if(slot != null)//같은 종류의 아이템이 있을 경우(null로 반환되지 않았다면)
+            if (slot != null)//같은 종류의 아이템이 있을 경우(null로 반환되지 않았다면)
             {
                 slot.quantity++;
-
-                CharacterManager.Instance.Player.itemDate = null;
+                UpdateUI();
                 return;
             }
         }
-        if(slots.Length < maxSlotcount)//인벤토리 보유 상한을 넘지 않을 경우
+        if (slots.Count < maxSlotcount)//인벤토리 보유 상한을 넘지 않을 경우
         {
-           GameObject itemSlot = Instantiate(itemSlots, Content);
+            GameObject itemSlot = Instantiate(itemSlots, Content);
             itemSlot.GetComponent<ItemSlot>().itemDate = date;
+            slots.Add(itemSlot.GetComponent<ItemSlot>()); // 리스트에 추가
+            UpdateUI();
+            return;
         }
 
     }
-    public void SelectItem(int index)
+    public void SelectItem(ItemDate date)
     {
-        
+        if (date != null)
+        {
+            ItemNameText.text = date.itemName;
+            ItemExplainText.text = date.itemDescription;
+        }
     }
     ItemSlot GetStackItemSlot(ItemDate date)//같은 종류의 아이템을 검색
     {
-        for (int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < slots.Count; i++)
         {
             if (slots[i].itemDate == date && slots[i].quantity < date.maxStackAmount)
             {

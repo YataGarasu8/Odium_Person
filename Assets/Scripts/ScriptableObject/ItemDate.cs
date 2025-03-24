@@ -19,4 +19,9 @@ public class ItemDate : ScriptableObject
     [Header("Stacking")]
     public bool canStack;
     public int maxStackAmount;
+
+    [Header("EquipStatus")]
+    public float HP;
+    public float Atk;
+    public float Def;
 }

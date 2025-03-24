@@ -7,7 +7,9 @@ public class Player : MonoBehaviour
 {
     public CharacterDate characterDate;
     public ItemDate itemDate;
-    public Action addItem;
+
+    public InventoryUI inventory;
+    
 
     private void Awake()
     {

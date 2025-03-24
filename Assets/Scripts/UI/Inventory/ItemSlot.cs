@@ -14,7 +14,6 @@ public class ItemSlot : MonoBehaviour
     public TextMeshProUGUI quantityText;
     private Outline outline;
 
-    public int index;
     public bool equipped;
     public int quantity;
 
@@ -30,7 +29,7 @@ public class ItemSlot : MonoBehaviour
     {
         icon.sprite = itemDate.icon;
         quantityText.text = quantity > 1 ? quantity.ToString() : string.Empty;
-
+        
         if(outline != null)
         {
             outline.enabled = equipped;
@@ -42,6 +41,6 @@ public class ItemSlot : MonoBehaviour
     }
     public void OnClickButton()
     {
-        inventoryUI.SelectItem(index);
+        inventoryUI.SelectItem(itemDate);
     }    
 }

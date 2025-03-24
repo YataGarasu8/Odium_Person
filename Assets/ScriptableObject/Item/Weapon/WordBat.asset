@@ -18,3 +18,6 @@ MonoBehaviour:
   type: 0
   canStack: 0
   maxStackAmount: 0
+  HP: 124
+  Atk: 359
+  Def: 98
