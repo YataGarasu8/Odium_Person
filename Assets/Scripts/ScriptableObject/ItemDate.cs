@@ -5,7 +5,7 @@ using UnityEngine;
 public enum ItemType
 {
     Equipable,
-    Expendability
+    Expendable
 }
 [CreateAssetMenu(fileName = "ItemDate", menuName ="Scriptable Object/Itemdate")]
 public class ItemDate : ScriptableObject

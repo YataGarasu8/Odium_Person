@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public CharacterDate characterDate;
     public ItemDate itemDate;
     public Action addItem;
 

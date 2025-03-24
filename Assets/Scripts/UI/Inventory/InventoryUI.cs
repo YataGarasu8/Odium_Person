@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class InventoryUI : MonoBehaviour
 {
     public ItemSlot[] slots;
-    public ItemSlot itemSlots;
 
+    public GameObject itemSlots;
     public GameObject inventoryWindow;
 
     [Header("Select Item")]
@@ -37,10 +37,8 @@ public class InventoryUI : MonoBehaviour
             inventoryWindow.SetActive(true);
         }
     }
-    public void AddItem()//아이템 추가
+    public void AddItem(ItemDate date)//아이템 추가
     {
-        ItemDate date = CharacterManager.Instance.Player.itemDate;
-
         if(date.canStack)//중복이 가능한 아이템일 경우
         {
             ItemSlot slot = GetStackItemSlot(date);//같은 종류의 아이템을 검색
@@ -53,9 +51,10 @@ public class InventoryUI : MonoBehaviour
                 return;
             }
         }
-        if(slots.Length < maxSlotcount)
+        if(slots.Length < maxSlotcount)//인벤토리 보유 상한을 넘지 않을 경우
         {
-            Instantiate(itemSlots,Content);
+           GameObject itemSlot = Instantiate(itemSlots, Content);
+            itemSlot.GetComponent<ItemSlot>().itemDate = date;
         }
 
     }
