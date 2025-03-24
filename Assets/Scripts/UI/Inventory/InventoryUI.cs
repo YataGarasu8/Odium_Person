@@ -25,6 +25,7 @@ public class InventoryUI : MonoBehaviour
     public GameObject trashButton;
 
     public Transform Content;
+    
 
     public bool IsOpen()
     {
@@ -53,6 +54,7 @@ public class InventoryUI : MonoBehaviour
             else
             {
                 slots[i].Clear();
+                slots.RemoveAt(i);
             }
         }
         slotCountText.text = $"{slots.Count}/{maxSlotcount}";
@@ -136,8 +138,32 @@ public class InventoryUI : MonoBehaviour
             UpdateUI();
         }
     }
+    public void ClickUse()
+    {
+        selectItem.quantity -= 1;
+
+        if(selectItem.quantity ==0)
+        {
+            selectItem.itemDate = null;
+            ItemNameText.text = null;
+            ItemExplainText.text = null;
+            ItemStatusText.text = null;
+            useButton.SetActive(false);
+            equipButton.SetActive(false);
+            trashButton.SetActive(false);
+        }
+
+        UpdateUI();
+    }
     public void ClickTrash()
     {
-
+        selectItem.itemDate = null;
+        ItemNameText.text = null;
+        ItemExplainText.text = null;
+        ItemStatusText.text = null;
+        useButton.SetActive(false);
+        equipButton.SetActive(false);
+        trashButton.SetActive(false);
+        UpdateUI();
     }
 }

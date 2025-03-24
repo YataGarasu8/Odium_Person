@@ -7,10 +7,10 @@ public class Player : MonoBehaviour
 {
     public CharacterDate characterDate;
     public ItemDate itemDate;
+    public int Gold;
 
     public InventoryUI inventory;
-    
-
+   
     private void Awake()
     {
         CharacterManager.Instance.Player = this;
