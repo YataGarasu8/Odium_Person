@@ -8,12 +8,12 @@ public class ItemSlot : MonoBehaviour
 {
     public ItemDate itemDate;
 
-    public InventoryUI inventoryUI;
     public Button button;
     public Image icon;
     public TextMeshProUGUI quantityText;
     private Outline outline;
 
+    public int index;
     public bool equipped;
     public int quantity;
 
@@ -41,6 +41,6 @@ public class ItemSlot : MonoBehaviour
     }
     public void OnClickButton()
     {
-        inventoryUI.SelectItem(itemDate);
+        CharacterManager.Instance.Player.inventory.SelectItem(index);
     }    
 }

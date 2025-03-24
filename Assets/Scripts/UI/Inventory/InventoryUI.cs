@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -19,6 +20,10 @@ public class InventoryUI : MonoBehaviour
     public TextMeshProUGUI ItemNameText;
     public TextMeshProUGUI ItemStatusText;
     public TextMeshProUGUI ItemExplainText;
+    public GameObject equipButton;
+    public GameObject useButton;
+    public GameObject trashButton;
+
     public Transform Content;
 
     public bool IsOpen()
@@ -43,6 +48,7 @@ public class InventoryUI : MonoBehaviour
             if (slots[i].itemDate != null)
             {
                 slots[i].Set();
+                slots[i].index = i;
             }
             else
             {
@@ -73,14 +79,7 @@ public class InventoryUI : MonoBehaviour
             return;
         }
 
-    }
-    public void SelectItem(ItemDate date)
-    {
-        if (date != null)
-        {
-            ItemNameText.text = date.itemName;
-            ItemExplainText.text = date.itemDescription;
-        }
+        return;
     }
     ItemSlot GetStackItemSlot(ItemDate date)//같은 종류의 아이템을 검색
     {
@@ -92,5 +91,49 @@ public class InventoryUI : MonoBehaviour
             }
         }
         return null;
+    }
+    public void SelectItem(int index)
+    {
+        if (slots[index].itemDate == null)
+        { return; }
+
+        selectItem = slots[index];
+        selectItemIndex = index;
+
+        ItemNameText.text = selectItem.itemDate.itemName;
+        ItemExplainText.text = selectItem.itemDate.itemDescription;
+
+        if(selectItem.itemDate.type == ItemType.Equipable)
+        {
+            ItemStatusText.text = $"HP {selectItem.itemDate.HP} Atk {selectItem.itemDate.Atk} Def {selectItem.itemDate.Def}";
+            equipButton.SetActive(true);
+            useButton.SetActive(false);
+        }
+        else
+        {
+            useButton.SetActive(true);
+            equipButton.SetActive(false);
+        }
+        trashButton.SetActive(true);
+    }
+    public void ClickEquip()
+    {
+        if(selectItem.equipped)
+        {
+            selectItem.equipped = false;
+            UpdateUI();
+        }
+        else
+        {
+            for(int i = 0; i < slots.Count; i++)
+            {
+                if (slots[i].equipped)
+                {
+                    slots[i].equipped = false;
+                }
+            }
+            selectItem.equipped = true;
+            UpdateUI();
+        }
     }
 }

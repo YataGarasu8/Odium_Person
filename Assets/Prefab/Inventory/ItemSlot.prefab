@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 1, g: 0.89841527, b: 0.23045808, a: 1}
-  m_EffectDistance: {x: 2, y: -2}
+  m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 0
 --- !u!114 &5747751177619574140
 MonoBehaviour:
@@ -164,7 +164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDate: {fileID: 0}
-  inventoryUI: {fileID: 0}
   button: {fileID: 5747751177619574140}
   icon: {fileID: 711852101437016838}
   quantityText: {fileID: 6411778946400225853}
