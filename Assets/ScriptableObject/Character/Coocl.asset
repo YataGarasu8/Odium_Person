@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: Coocl
   m_EditorClassIdentifier: 
   characterSprite: {fileID: 118789084775556438, guid: 924eb8cb7ac70d94387004db3a5bac5c, type: 3}
-  characterName: Coocl
+  characterName: "\uCFE0\uD074\uB77D"
   characterLevel: 1
   characterMaxLevel: 100
   maxHp: 1604
   maxAtk: 1198
   maxDef: 1255
+  characterDescription: "\uC758\uC9C0\uB97C \uAC00\uC9C0\uAC8C \uB41C \uBCBD\uC7A5\uC2DC\uACC4.
+    \uBC84\uB824\uB3C4 \uC190\uC73C\uB85C \uB2E4\uC2DC \uB3CC\uC544\uC624\uB2C8 \uB9E4\uC6B0
+    \uD3B8\uB9AC\uD558\uB2E4."

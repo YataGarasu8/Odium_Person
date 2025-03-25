@@ -15,6 +15,9 @@ public class CharacterStatus : MonoBehaviour
     public float characterDef;
     public Image characterSprite;
 
+    public CharacterDescription description;
+    public StatusUI status;
+
     private void Start()
     {
         characterDate = CharacterManager.Instance.Player.characterDate;
@@ -32,5 +35,7 @@ public class CharacterStatus : MonoBehaviour
             characterHP = characterMaxHP;
         }
         characterSprite.sprite = characterDate.characterSprite;
+
+        description.UpdateDescription();
     }
 }

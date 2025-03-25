@@ -8,6 +8,13 @@ public class PlayerUI : MonoBehaviour
     public GameObject inventoryWindow;
     public GameObject statusWindow;
 
+    private void Start()
+    {
+        characterWindow.SetActive(true);
+        inventoryWindow.SetActive(false);
+        statusWindow.SetActive(false);
+    }
+
     public void ClickCharacter()
     {
         characterWindow.SetActive(true);

@@ -165,6 +165,6 @@ public class InventoryUI : MonoBehaviour
         useButton.SetActive(false);
         equipButton.SetActive(false);
         trashButton.SetActive(false);
-        UpdateUI();
+        UpdateUI();//리스트.카운트와 인덱스 간의 괴리가 발생, 수정 필요
     }
 }
