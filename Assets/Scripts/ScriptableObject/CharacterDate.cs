@@ -12,5 +12,9 @@ public class CharacterDate : ScriptableObject
     public float maxHp;
     public float maxAtk;
     public float maxDef;
+    public float baseHp;
+    public float baseAtk;
+    public float baseDef;
+
     public string characterDescription;
 }

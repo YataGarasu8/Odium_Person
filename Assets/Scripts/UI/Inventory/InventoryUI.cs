@@ -12,6 +12,8 @@ public class InventoryUI : MonoBehaviour
     public GameObject itemSlots;
     public GameObject inventoryWindow;
 
+    public EquipMent equip;
+
     [Header("Select Item")]
     private ItemSlot selectItem;
     private int selectItemIndex;

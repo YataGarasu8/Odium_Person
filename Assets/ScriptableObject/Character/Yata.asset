@@ -19,6 +19,9 @@ MonoBehaviour:
   maxHp: 1224
   maxAtk: 1501
   maxDef: 996
+  baseHp: 133
+  baseAtk: 168
+  baseDef: 63
   characterDescription: "\uB098\uC758 \uBD84\uC2E0. \uC5B8\uC81C\uB098 \uBA4D\uD574\uBCF4\uC774\uB294
     \uADC0\uC5EC\uC6B4 \uAE4C\uB9C8\uADC0\uC9C0\uB9CC \uC2E4\uC0C1\uC740 \uB530\uB85C
-    \uC788... \uC744 \uC9C0\uB3C4?"
+    \uC788... \uC744 \uC9C0\uB3C4?  https://www.youtube.com/@YataGarasu8"
