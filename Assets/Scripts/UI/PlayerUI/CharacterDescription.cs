@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class StatusUI : MonoBehaviour
+public class CharacterDescription : MonoBehaviour
 {
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI levelText;
+    public TextMeshProUGUI DescriptionText;
 
-    public void UpdateStatus()
+    public void UpdateDescription()
     {
-        
+
     }
 }

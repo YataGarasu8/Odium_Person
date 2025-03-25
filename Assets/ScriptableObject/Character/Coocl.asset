@@ -10,15 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb0ff459881ac2d43a5d06a9522bff1e, type: 3}
-  m_Name: Yata
+  m_Name: Coocl
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 4799564363562893812, guid: ef27243d2935b2f499228295a0742db3, type: 3}
-  characterName: Yata
+  characterSprite: {fileID: 118789084775556438, guid: 924eb8cb7ac70d94387004db3a5bac5c, type: 3}
+  characterName: Coocl
   characterLevel: 1
   characterMaxLevel: 100
-  maxHp: 1224
-  maxAtk: 1501
-  maxDef: 996
-  characterDescription: "\uB098\uC758 \uBD84\uC2E0. \uC5B8\uC81C\uB098 \uBA4D\uD574\uBCF4\uC774\uB294
-    \uADC0\uC5EC\uC6B4 \uAE4C\uB9C8\uADC0\uC9C0\uB9CC \uC2E4\uC0C1\uC740 \uB530\uB85C
-    \uC788... \uC744 \uC9C0\uB3C4?"
+  maxHp: 1604
+  maxAtk: 1198
+  maxDef: 1255

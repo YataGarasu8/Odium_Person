@@ -8,7 +8,9 @@ public class CharacterDate : ScriptableObject
     public Sprite characterSprite;
     public string characterName;
     public int characterLevel;
+    public int characterMaxLevel;
     public float maxHp;
     public float maxAtk;
     public float maxDef;
+    public string characterDescription;
 }

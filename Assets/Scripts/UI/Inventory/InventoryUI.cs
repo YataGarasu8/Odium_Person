@@ -117,6 +117,7 @@ public class InventoryUI : MonoBehaviour
             equipButton.SetActive(false);
         }
         trashButton.SetActive(true);
+        UpdateUI();
     }
     public void ClickEquip()
     {

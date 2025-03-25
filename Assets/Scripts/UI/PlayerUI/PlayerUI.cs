@@ -16,14 +16,14 @@ public class PlayerUI : MonoBehaviour
     }
     public void ClickStatus()
     {
-        inventoryWindow.SetActive(true);
+        statusWindow.SetActive(true);
         characterWindow.SetActive(false);
-        statusWindow.SetActive(false);
+        inventoryWindow.SetActive(false);
     }
     public void ClickInventory()
     {
-        statusWindow.SetActive(true);
-        inventoryWindow.SetActive(false);
+        inventoryWindow.SetActive(true);
+        statusWindow.SetActive(false);
         characterWindow.SetActive(false);
     }
 }

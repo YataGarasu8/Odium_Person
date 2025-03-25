@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public int Gold;
 
     public InventoryUI inventory;
+    public CharacterStatus status;
    
     private void Awake()
     {
