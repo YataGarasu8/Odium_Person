@@ -15,4 +15,8 @@ public class GMOrder : MonoBehaviour
     {
         CharacterManager.Instance.Player.inventory.AddItem(portionItem);
     }
+    public void ClickAddGold()
+    {
+        CharacterManager.Instance.Player.AddGold(5);
+    }
 }

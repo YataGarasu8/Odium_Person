@@ -23,5 +23,8 @@ public class Player : MonoBehaviour
     {
         goldText.text = gold.ToString();
     }
-
+    public void AddGold(int money)
+    {
+        gold += money;
+    }
 }
