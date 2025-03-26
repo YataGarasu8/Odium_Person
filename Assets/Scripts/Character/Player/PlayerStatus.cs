@@ -28,17 +28,11 @@ public class PlayerStatus : MonoBehaviour
     public void UpdateCharacter()
     {
         characterDate = CharacterManager.Instance.Player.characterDate;
-        //레벨을 올려도 능력치에 반영이 안된다...
-        characterMaxHP = characterDate.baseHp + ((characterDate.maxHp - characterDate.baseHp) * (characterDate.characterLevel / characterDate.characterMaxLevel));
-        characterAtk = characterDate.baseAtk + ((characterDate.maxAtk - characterDate.baseAtk) * (characterDate.characterLevel / characterDate.characterMaxLevel));
-        characterDef = characterDate.baseDef + ((characterDate.maxDef - characterDate.baseDef) * (characterDate.characterLevel / characterDate.characterMaxLevel));
 
-        if (CharacterManager.Instance.Player.itemDate != null)
-        {
-            characterMaxHP += CharacterManager.Instance.Player.itemDate.HP;
-            characterAtk += CharacterManager.Instance.Player.itemDate.Atk;
-            characterDef += CharacterManager.Instance.Player.itemDate.Def;
-        }
+        //레벨을 올려도 능력치에 반영이 안된다... 뒤의 ((characterDate.maxHp - characterDate.baseHp) * (characterDate.characterLevel / characterDate.characterMaxLevel))가 전부 잘린다...
+        characterMaxHP = (characterDate.baseHp + ((characterDate.maxHp - characterDate.baseHp) * (characterDate.characterLevel / characterDate.characterMaxLevel)));
+        characterAtk = (characterDate.baseAtk + ((characterDate.maxAtk - characterDate.baseAtk) * (characterDate.characterLevel / characterDate.characterMaxLevel)));
+        characterDef = (characterDate.baseDef + ((characterDate.maxDef - characterDate.baseDef) * (characterDate.characterLevel / characterDate.characterMaxLevel)));
 
         if (characterHP <= 0)
         {

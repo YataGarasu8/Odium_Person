@@ -126,6 +126,7 @@ public class InventoryUI : MonoBehaviour
         if(selectItem.equipped)
         {
             selectItem.equipped = false;
+            equip.UnEquip();
             UpdateUI();
         }
         else
@@ -135,9 +136,11 @@ public class InventoryUI : MonoBehaviour
                 if (slots[i].equipped)
                 {
                     slots[i].equipped = false;
+                    equip.UnEquip();
                 }
             }
             selectItem.equipped = true;
+            equip.Equip(selectItem.itemDate);
             UpdateUI();
         }
     }
