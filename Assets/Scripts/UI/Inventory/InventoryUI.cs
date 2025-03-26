@@ -12,9 +12,10 @@ public class InventoryUI : MonoBehaviour
     public GameObject itemSlots;
     public GameObject inventoryWindow;
 
+    public PlayerStatus playerStatus;
     public EquipMent equip;
 
-    [Header("Select Item")]
+    [Header("SelectItem")]
     private ItemSlot selectItem;
     private int selectItemIndex;
     public int maxSlotcount;
@@ -60,6 +61,7 @@ public class InventoryUI : MonoBehaviour
             }
         }
         slotCountText.text = $"{slots.Count}/{maxSlotcount}";
+        playerStatus.UpdateCharacter();
     }
     public void AddItem(ItemDate date)//아이템 추가
     {

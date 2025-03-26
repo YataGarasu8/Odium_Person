@@ -20,10 +20,10 @@ public class EquipMent : MonoBehaviour
 
         if (date != null)
         {
-            status.characterMaxHP += date.HP;
-            status.characterHP += date.HP;
-            status.characterAtk += date.Atk;
-            status.characterDef += date.Def;
+            status.characterMaxHP -= date.HP;
+            status.characterHP -= date.HP;
+            status.characterAtk -= date.Atk;
+            status.characterDef -= date.Def;
             CharacterManager.Instance.Player.itemDate = null;
         }
     }
